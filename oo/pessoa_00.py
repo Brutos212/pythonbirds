@@ -19,7 +19,13 @@ if __name__ == '__main__':
         print(filhos.nome)
     fabio.sobrenome = 'Santos'
     del vilma.filhos
+    fabio.olhos = 1
+    del fabio.olhos
     print(fabio.__dict__)
     print(vilma.__dict__)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
     print(fabio.olhos)
     print(vilma.olhos)
+    print(id(Pessoa.olhos), id(fabio.olhos), id(vilma.olhos))
+
