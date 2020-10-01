@@ -47,7 +47,7 @@ if __name__ == '__main__':
     pessoa = Pessoa('Anonimo')
     print(isinstance(pessoa, Pessoa))
     print(isinstance(pessoa, Homem))
-    print(isinstance(fabio, Homem))
+    print(isinstance(fabio, Pessoa))
     print(isinstance(fabio, Homem))
     print(fabio.olhos)
     
