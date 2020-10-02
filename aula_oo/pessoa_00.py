@@ -1,12 +1,13 @@
 class Pessoa:
     olhos = 2
-    def __init__(self, *filhos, nome = None, idade=41):
+
+    def __init__(self, *filhos, nome=None, idade=41):
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
 
     def comprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod
     def metodo_estatico():
@@ -16,11 +17,16 @@ class Pessoa:
     def nome_e_atributos_de_classe(cls):
         return f'{cls} - olhos {cls.olhos}'
 
+
 class Homem(Pessoa):
-    pass
+    def comprimentar(self):
+        comprimentar_da_classe = super(Homem, self).comprimentar()
+        return f'{comprimentar_da_classe}. Prazer Vilma'
+
 
 class Mutante(Pessoa):
     olhos = 3
+
 
 if __name__ == '__main__':
     fabio = Mutante(nome='Fabio')
@@ -50,5 +56,5 @@ if __name__ == '__main__':
     print(isinstance(fabio, Pessoa))
     print(isinstance(fabio, Homem))
     print(fabio.olhos)
-    
-
+    print(vilma.comprimentar())
+    print(fabio.comprimentar())
